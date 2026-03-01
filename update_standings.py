@@ -56,7 +56,7 @@ def count_inversions(actual, prediction):
     return inversions
 
 def main():
-    url = "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2026"
+    url = "https://statsapi.mlb.com/api/v1/standings?leagueId=103,104&season=2025"
     try:
         response = requests.get(url)
         response.raise_for_status()
