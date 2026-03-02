@@ -227,7 +227,8 @@
             </div>
             <div class="detail-header">
                 <h1 id="detailPlayerName"></h1>
-                <p>Predictions</p>
+                <p id="playerDescription">Predictions</p>
+            </div>
             </div>
             <div id="playerPredictionsGrid" class="division-grid"></div>
         </div>
@@ -303,6 +304,14 @@
             document.getElementById('topPage').classList.add('hidden');
             document.getElementById('playerPage').classList.remove('hidden');
             document.getElementById('detailPlayerName').innerText = playerName;
+
+                const descriptions = {
+                    "細川峻平": "全米を震撼させる、狂気の大当たり",
+                    "井口健介": "理論が導く、必然の当選確実",
+                    "田中雄太郎": "ロマンと理性が織りなす、幸福な当たりクジ"
+                };
+                document.getElementById('playerDescription').innerText = descriptions[playerName] || "Predictions";
+    
             
             const grid = document.getElementById('playerPredictionsGrid');
             grid.innerHTML = globalData.divisions.map(div => {
@@ -314,7 +323,6 @@
                         <div style="display:flex; align-items:center; padding:12px; border-bottom:1px solid #eee;">
                             <div style="width:30px; font-weight:800; font-size:1.4rem; color:var(--mlb-blue); text-align:center;">${t.predictions[playerName]}</div>
                             <img src="${getLogo(t.id)}" style="width:28px; margin:0 15px;">
-                            <div style="flex:1; font-size:1rem; font-weight:bold;">${t.name}</div>
                             <div style="font-size:0.75rem; color:#888;">現:${t.actual_rank}位</div>
                         </div>`).join('')}
                     </div>
