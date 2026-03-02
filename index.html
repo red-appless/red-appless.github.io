@@ -322,7 +322,10 @@
                         <div style="display:flex; align-items:center; padding:12px; border-bottom:1px solid #eee;">
                             <div style="width:30px; font-weight:800; font-size:1.4rem; color:var(--mlb-blue); text-align:center;">${t.predictions[playerName]}</div>
                             <img src="${getLogo(t.id)}" style="width:28px; margin:0 15px;">
-                            <div style="font-size:0.75rem; color:#888;">現:${t.actual_rank}位</div>
+                            <div style="text-align: left;">
+                                <div style="font-weight:bold; font-size:0.9rem;">${t.name}</div>
+                                <div style="font-size:0.75rem; color:#888;">現:${t.actual_rank}位</div>
+                            </div>
                         </div>`).join('')}
                     </div>
                 </div>`;
